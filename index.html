@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electronic Project Showcase</title>
+  <meta name="description" content="A modern showcase for Arduino, Robotics, IoT and Home Automation projects.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#">⚡ Electro<span>Showcase</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-btn" href="#projects">Explore Projects</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow">⚡ ELECTRONICS • ROBOTICS • IoT</div>
+        <h1>Build. Innovate.<br><span>Showcase.</span></h1>
+        <p>Explore creative electronic projects, smart automation ideas and robotics prototypes in one modern showcase.</p>
+        <div class="hero-actions">
+          <a class="primary" href="#projects">View Projects →</a>
+          <a class="secondary" href="#about">Learn More</a>
+        </div>
+        <div class="stats">
+          <div><strong>40</strong><small>Projects</small></div>
+          <div><strong>04</strong><small>Categories</small></div>
+          <div><strong>100%</strong><small>Creative</small></div>
+        </div>
+      </div>
+      <div class="hero-art">
+  <div class="slider" aria-label="Featured electronics projects">
+    <div class="slide active">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85" alt="Electronics circuit">
+      <div class="slide-caption"><span>01</span><strong>Smart Electronics</strong><small>Build • Innovate • Showcase</small></div>
+    </div>
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1634454023167-59d99c0921a5?auto=format&fit=crop&w=1200&q=85" alt="Arduino electronics">
+      <div class="slide-caption"><span>02</span><strong>Arduino Projects</strong><small>Sensors • Controllers • Prototypes</small></div>
+    </div>
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85" alt="Robotics project">
+      <div class="slide-caption"><span>03</span><strong>Robotics</strong><small>Robots • Automation • Innovation</small></div>
+    </div>
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1558008258-3256797b43f3?auto=format&fit=crop&w=1200&q=85" alt="Smart home automation">
+      <div class="slide-caption"><span>04</span><strong>IoT & Automation</strong><small>Connected • Smart • Efficient</small></div>
+    </div>
+    <button class="slider-btn prev" aria-label="Previous slide">‹</button>
+    <button class="slider-btn next" aria-label="Next slide">›</button>
+    <div class="slider-dots">
+      <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
+      <button class="dot" data-slide="1" aria-label="Slide 2"></button>
+      <button class="dot" data-slide="2" aria-label="Slide 3"></button>
+      <button class="dot" data-slide="3" aria-label="Slide 4"></button>
+    </div>
+  </div>
+</section>
+
+    <section class="section" id="projects">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">FEATURED WORK</div>
+          <h2>Electronic Projects</h2>
+        </div>
+        <p>Ideas that connect hardware, software and real-world solutions.</p>
+      </div>
+
+      <div class="project-tools">
+  <input id="projectSearch" type="search" placeholder="🔍 Search projects..." aria-label="Search projects">
+</div>
+<div class="category-grid" role="tablist" aria-label="Project categories">
+  <button class="category-card" data-project-filter="arduino" role="tab" aria-selected="false">
+    <span class="category-icon">⚡</span><span><b>Arduino</b><small>Microcontrollers & Sensors</small></span><em>10 Projects</em>
+  </button>
+  <button class="category-card" data-project-filter="iot" role="tab" aria-selected="false">
+    <span class="category-icon">☁️</span><span><b>IoT</b><small>Connected Smart Devices</small></span><em>10 Projects</em>
+  </button>
+  <button class="category-card" data-project-filter="robotics" role="tab" aria-selected="false">
+    <span class="category-icon">🤖</span><span><b>Robotics</b><small>Robots & Intelligent Machines</small></span><em>10 Projects</em>
+  </button>
+  <button class="category-card" data-project-filter="automation" role="tab" aria-selected="false">
+    <span class="category-icon">⚙️</span><span><b>Automation</b><small>Smart Control Systems</small></span><em>10 Projects</em>
+  </button>
+</div>
+
+      <div class="project-hint" id="projectHint">Select a category above to view projects.</div>
+      <div class="grid" id="projectGrid"></div>
+    </section>
+
+    <section class="about" id="about">
+      <div>
+        <div class="eyebrow">ABOUT THE SHOWCASE</div>
+        <h2>Technology with a purpose.</h2>
+        <p>This website is a clean, responsive starting point for presenting student and personal electronics projects. Replace the sample cards with your own project images, descriptions and links.</p>
+      </div>
+      <div class="about-box">
+        <strong>HTML • CSS • JavaScript</strong>
+        <span>GitHub Pages ready</span>
+      </div>
+    </section>
+
+    <div class="modal" id="projectModal" aria-hidden="true">
+      <div class="modal-backdrop"></div>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+        <div class="modal-tag" id="modalTag">PROJECT</div>
+        <h2 id="modalTitle">Project</h2>
+        <p id="modalDescription"></p>
+        <div class="project-info-grid">
+          <div><strong>Technology</strong><span id="modalTech"></span></div>
+          <div><strong>Components</strong><span id="modalComponents"></span></div>
+          <div><strong>Features</strong><span id="modalFeatures"></span></div>
+          <div><strong>Use</strong><span id="modalUse"></span></div>
+        </div>
+        <h3>Project List</h3>
+        <ul class="modal-list" id="modalList"></ul>
+      </div>
+    </div>
+  </main>
+
+  
+<section class="contact" id="contact">
+  <div>
+    <p class="tag">GET IN TOUCH</p>
+    <h2>Have a project idea?</h2>
+    <p>Use this showcase to present your electronics, robotics and IoT work. Replace the sample contact details with your own information.</p>
+  </div>
+  <form id="contactForm">
+    <input required type="text" placeholder="Your name">
+    <input required type="email" placeholder="Your email">
+    <textarea required rows="4" placeholder="Your message"></textarea>
+    <button type="submit">Send Message →</button>
+    <small id="formMessage"></small>
+  </form>
+</section>
+
+<footer>© 2026 Electronic Project Showcase · Built for innovation.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
